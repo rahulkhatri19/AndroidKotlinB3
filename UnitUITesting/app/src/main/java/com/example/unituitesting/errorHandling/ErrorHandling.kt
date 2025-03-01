@@ -1,4 +1,4 @@
-package com.example.unituitesting
+package com.example.unituitesting.errorHandling
 
 class ErrorHandling {
 }
