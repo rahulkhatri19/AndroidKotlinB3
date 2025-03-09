@@ -33,9 +33,9 @@ fun CourseNavigation(navController: NavHostController) {
 }
 
 object CourseNavigation {
-    const val HOME = "home"
-    const val EXPLORE = "explore"
-    const val MY_COURSE = "my_course"
-    const val PROFILE = "profile"
+    const val HOME = "Home"
+    const val EXPLORE = "Explore"
+    const val MY_COURSE = "My Course"
+    const val PROFILE = "Profile"
     const val DETAILED_SCREEN = "detail_screen"
 }
