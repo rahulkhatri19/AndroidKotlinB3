@@ -1,5 +1,6 @@
 package com.geeksforgeek.elearningapp
 
+import android.content.Context
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -30,6 +31,7 @@ import androidx.navigation.NavController
 import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
 import coil3.request.crossfade
+import com.geeksforgeek.elearningapp.Utility.paymentActivity
 import com.geeksforgeek.elearningapp.bottomNav.CourseNavigation.DETAILED_SCREEN
 import com.geeksforgeek.elearningapp.model.CourseModel
 
@@ -44,7 +46,7 @@ fun HomeScreen(navController: NavController) {
 
         LazyColumn {
             items(courseList){ list ->
-                CourseCard(list, navController)
+                CourseCard(list, navController, context)
             }
         }
 
@@ -54,7 +56,7 @@ fun HomeScreen(navController: NavController) {
 }
 
 @Composable
-fun CourseCard(list:CourseModel, navController: NavController){
+fun CourseCard(list:CourseModel, navController: NavController, context: Context){
     Card(
         modifier = Modifier.padding(start = 16.dp, end = 16.dp, bottom = 16.dp),
         elevation = CardDefaults.cardElevation(defaultElevation = 8.dp),
@@ -110,7 +112,7 @@ fun CourseCard(list:CourseModel, navController: NavController){
 
             Button(
                 onClick = {
-                  //  paymentIntent(context, "")
+                    paymentActivity(context)
                 },
                 Modifier
                     .fillMaxWidth()
